@@ -29,5 +29,17 @@ public class Demo {
         //测试删除
         singleLinkedList.delete(1);
         singleLinkedList.list();
+        int size = singleLinkedList.getSize(singleLinkedList.getHead());
+        System.out.println(size);
+
+
+//        System.out.println();
+//        int size1 = singleLinkedList.getSize(singleLinkedList.getHead());
+//        System.out.println(size1);
+//        HeroNode lastIndexNode = singleLinkedList.findLastIndexNode(singleLinkedList.getHead(), size1);
+//        System.out.println(lastIndexNode.toString());
+        System.out.println();
+        singleLinkedList.reverse(singleLinkedList.getHead());
+        singleLinkedList.list();
     }
 }

@@ -83,6 +83,23 @@ public class SingleLinkedList {
     }
 
     /**
+     * @return
+     * @describe 获取链表节点的有效个数
+     */
+    public int getSize(HeroNode head) {
+        if (head.next == null) {
+            return 0;
+        }
+        int len = 0;
+        HeroNode temp = head.next;
+        while (temp != null) {
+            len++;
+            temp = temp.next;
+        }
+        return len;
+    }
+
+    /**
      * @param no
      * @describe 删除节点
      */
@@ -125,5 +142,53 @@ public class SingleLinkedList {
             System.out.println(temp.toString());
             temp = temp.next;
         }
+    }
+
+    /**
+     * @return
+     * @describe 获取头节点
+     */
+    public HeroNode getHead() {
+        return head;
+    }
+
+    /**
+     * @param head
+     * @param index
+     * @return
+     * @describe 寻找倒数第K个节点
+     */
+    public HeroNode findLastIndexNode(HeroNode head, int index) {
+        if (head.next == null) {
+            return null;
+        }
+        int size = getSize(head);
+        // size-index位置，就是我们倒数第K个节点
+        if (index <= 0 || index > size) {
+            return null;
+        }
+        HeroNode cur = head.next;
+        for (int i = 0; i < size - index; i++) {
+            cur = cur.next;
+        }
+        return cur;
+    }
+
+    public void reverse(HeroNode head) {
+        //如果链表为空，或只有一个节点，无需反转
+        if (head.next == null || head.next.next == null) {
+            return;
+        }
+        //定义一个辅助节点，帮忙遍历
+        HeroNode cur = head.next;
+        HeroNode next = null;
+        HeroNode reverse = new HeroNode(0, "", "");
+        while (cur != null) {
+            next = cur.next;//先保存
+            cur.next = reverse.next;//限制空
+            reverse.next =  cur;
+            cur = next;//后移
+        }
+        head.next = reverse.next;
     }
 }
