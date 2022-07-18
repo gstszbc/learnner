@@ -2,47 +2,19 @@ package com.example.learnner.datastructure.stack;
 
 /**
  * Author: zhangbicheng
- * Date: 2022/7/14
+ * Date: 2022/7/15
  */
-public class StackDemo {
-    public static void main(String[] args) {
-        ArrayStack arrayStack = new ArrayStack(4);
-        for (int i = 0; i < 4; i++) {
-            arrayStack.push(i);
-        }
-        arrayStack.showStack();
-        System.out.println();
-        //出栈
-        arrayStack.pop();
-        arrayStack.showStack();
-        System.out.println();
-        //出栈
-        arrayStack.pop();
-        arrayStack.showStack();
-        System.out.println();
-        //出栈
-        arrayStack.pop();
-        arrayStack.showStack();
-        System.out.println();
-        //出栈
-        arrayStack.pop();
-        arrayStack.showStack();
-
-        //入栈
-        System.out.println();
-        arrayStack.push(1);
-        arrayStack.showStack();
+public class Calculator {
 
 
-    }
 }
 
-class ArrayStack {
+class ArrayStack2 {
     private int[] stack;
     private int maxSize;
     private int top = -1;
 
-    public ArrayStack(int maxSize) {
+    public ArrayStack2(int maxSize) {
         this.maxSize = maxSize;
         stack = new int[maxSize];
     }
