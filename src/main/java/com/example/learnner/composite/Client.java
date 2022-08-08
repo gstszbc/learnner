@@ -1,5 +1,9 @@
 package com.example.learnner.composite;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
 /**
  * Author: zhangbicheng
  * Date: 2022/8/2
@@ -23,6 +27,16 @@ public class Client {
         university.add(collage2);
 
         university.print();
+
+
+        Map<Integer, String> hashMap = new HashMap<>();
+        hashMap.put(1, "jack");
+        hashMap.put(2, "lisa");
+        Map<Integer, String> map = new HashMap<>();
+        map.put(3, "rose");
+        map.putAll(hashMap);
+        Set<Integer> integers = map.keySet();
+        integers.stream().forEach(s -> System.out.println(map.get(s)));
 
     }
 }
